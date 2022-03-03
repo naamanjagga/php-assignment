@@ -106,4 +106,24 @@ foreach($products as $key => $value){
    }
 }
 echo '</table>';
+
+echo '<br><br>';
+echo '<table>';
+foreach($products as $key => $value){
+    //key is category
+   foreach($value as $k => $v){
+       //k is subcategory
+       foreach($v as $item => $items){
+           if($items['brand']=="Samsung"){
+            //item is index
+            echo '<tr><td>Product ID: '.$items['id'].'</td></tr>';
+            echo '<tr><td>Product Name: '.$items['name'].'</td></tr>';
+            echo '<tr> <td>Subcategory: '.$k.'</td></tr>';
+            echo '<tr><td>Category: '.$key .'</td></tr>';
+           echo '---------------------';
+       }
+   }
+   }
+}
+echo '</table>';
 ?>

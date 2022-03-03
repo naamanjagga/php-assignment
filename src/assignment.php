@@ -126,4 +126,27 @@ foreach($products as $key => $value){
    }
 }
 echo '</table>';
+
+echo '<br><br>';
+echo '<table><tr><th>Category</th><th>SubCategory</th><th>Id</th><th>Name</th><th>Brand</th></tr>';
+foreach($products as $key => $value){
+    //key is category
+   foreach($value as $k => $v){
+       //k is subcategory
+       foreach($v as $item => $items){
+            //item is index
+            if($items['id'] == "PR003") {
+                continue;
+            
+            }else{
+            echo '<tr><td>'.$key .'</td><td>'.$k.'</td><td>'.$items['id'].'</td><td>'.$items['name'].'</td><td>'.$items['brand'].'</td></tr>';
+   
+        }
+           
+      }
+   }
+}
+echo '</table>';
+
+
 ?>
